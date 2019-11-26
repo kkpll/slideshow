@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="slideshow.css">
+    <script src ="slideshow.js"></script>
+    <title>SlideShow</title>
+</head>
+<body>
+<section>
+<div class="slideshow" id="slideshow1">
+    <div class="slideshow__images slideshow__images--2">
+        <div class="slideshow__images__image">１</div>
+        <div class="slideshow__images__image">２</div>
+        <div class="slideshow__images__image">３</div>
+    </div>
+    <div class="slideshow__btns">
+        <a href="#" class="slideshow__btns__btn slideshow__btns__btn--prev">PREV</a>
+        <a href="#" class="slideshow__btns__btn slideshow__btns__btn--next">NEXT</a>
+    </div>
+</div>
+<script>
+    var slideshow1 = new Slideshow('slideshow1');
+    slideshow1.init();
+    slideshow1.loop();
+</script>
+<div class="slideshow" id="slideshow2">
+    <div class="slideshow__images slideshow__images--3">
+        <div class="slideshow__images__image">１</div>
+        <div class="slideshow__images__image">２</div>
+        <div class="slideshow__images__image">３</div>
+    </div>
+    <div class="slideshow__btns">
+        <a href="#" class="slideshow__btns__btn slideshow__btns__btn--prev">PREV</a>
+        <a href="#" class="slideshow__btns__btn slideshow__btns__btn--next">NEXT</a>
+    </div>
+</div>
+<script>
+    var slideshow2 = new Slideshow('slideshow2');
+    slideshow2.init();
+    slideshow2.loop();
+</script>
+</section>
+</body>
+</html>

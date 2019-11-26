@@ -5,6 +5,7 @@ var DIRECTION = {
 };
 
 function Slideshow(id){
+    
     this.id       = id;
     this.lasttime = 0;
     this.interval = 3;
@@ -13,6 +14,9 @@ function Slideshow(id){
     this.count    = 0;
     this.ready    = false;
     this.timer    = false;
+
+    this.init();
+
 }
 
 Slideshow.prototype.init = function(){
@@ -24,6 +28,8 @@ Slideshow.prototype.init = function(){
     prevbtn = slideshow.getElementsByClassName('slideshow__btns__btn--prev')[0];
 
     this.length = images.children.length;
+
+    if( this.length === 1 ) slideshow.getElementsByClassName('slideshow__btns')[0].style.display = 'none';
 
     images.innerHTML += images.innerHTML;
 
@@ -48,8 +54,6 @@ Slideshow.prototype.init = function(){
 
            self.timer = setTimeout(function() {
 
-               console.log('resize');
-
                var image = images.getElementsByClassName('slideshow__images__image')[0];
 
                self.move = (image.clientWidth / slideshow.clientWidth) * 100;
@@ -59,6 +63,13 @@ Slideshow.prototype.init = function(){
                images.style.transform = 'translateX(0)';
 
                self.ready = true;
+
+               if( e === 'load'){
+                   console.log('window load');
+                   self.loop();
+               }else if (e === 'resize'){
+                   console.log('resize');
+               }
 
            }, 200 );
 

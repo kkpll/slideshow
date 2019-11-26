@@ -7,13 +7,13 @@ var DIRECTION = {
 function Slideshow(args){
 
     this.id       = args.id;
-    this.lasttime = 0;
     this.interval = args.interval || 5;
     this.autoplay  = args.autoplay || false ;
     this.length   = 0;
     this.position = 0;
     this.count    = 0;
     this.ready    = false;
+    this.lasttime = 0;
     this.timer    = false;
 
     this.init();

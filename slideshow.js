@@ -115,8 +115,6 @@ Slideshow.prototype.slide = function(direction){
         this.count--;
     }
 
-    console.log(this.count);
-
     setTimeout( function(){
 
         images.classList.add('transition');

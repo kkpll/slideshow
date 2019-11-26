@@ -4,11 +4,12 @@ var DIRECTION = {
     PREV : '-'
 };
 
-function Slideshow(id){
+function Slideshow(args){
 
-    this.id       = id;
+    this.id       = args.id;
     this.lasttime = 0;
-    this.interval = 3;
+    this.interval = args.interval || 5;
+    this.autoplay  = args.autoplay || false ;
     this.length   = 0;
     this.position = 0;
     this.count    = 0;
@@ -66,7 +67,7 @@ Slideshow.prototype.init = function(){
 
                if( e === 'load'){
                    console.log('window load');
-                   if( self.length > 1 ) self.loop();
+                   if( self.length > 1 && self.autoplay) self.loop();
                }else if (e === 'resize'){
                    console.log('resize');
                }

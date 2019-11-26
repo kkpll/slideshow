@@ -21,7 +21,11 @@
     </div>
 </div>
 <script>
-    var slideshow1 = new Slideshow('slideshow1');
+    var slideshow1 = new Slideshow({
+        id : 'slideshow1',
+        autoplay : true,
+        interval : 2,
+    });
 </script>
 <div class="slideshow" id="slideshow2">
     <div class="slideshow__images slideshow__images--3">
@@ -35,7 +39,10 @@
     </div>
 </div>
 <script>
-    var slideshow2 = new Slideshow('slideshow2');
+    var slideshow2 = new Slideshow({
+        id : 'slideshow2',
+        autoplay : true,
+    });
 </script>
 </section>
 </body>

@@ -4,21 +4,23 @@ var DIRECTION = {
     PREV : '-'
 };
 
+
 function Slideshow(args){
 
     this.id       = args.id;
     this.interval = args.interval || 5;
-    this.autoplay  = args.autoplay || false ;
+    this.autoplay = args.autoplay || false;
     this.length   = 0;
     this.position = 0;
     this.count    = 0;
-    this.ready    = false;
     this.lasttime = 0;
+    this.ready    = false;
     this.timer    = false;
 
     this.init();
 
 }
+
 
 Slideshow.prototype.init = function(){
 
@@ -65,10 +67,10 @@ Slideshow.prototype.init = function(){
 
                self.ready = true;
 
-               if( e === 'load'){
+               if( e === 'load' ){
                    console.log('window load');
                    if( self.length > 1 && self.autoplay) self.loop();
-               }else if (e === 'resize'){
+               }else if ( e === 'resize' ){
                    console.log('resize');
                }
 
@@ -90,6 +92,7 @@ Slideshow.prototype.init = function(){
     });
 
 } //end of Slideshow.prototype.init
+
 
 Slideshow.prototype.slide = function(direction){
 
@@ -135,6 +138,7 @@ Slideshow.prototype.slide = function(direction){
     }, 100 );
 
 }
+
 
 Slideshow.prototype.loop = function(){
 

@@ -155,7 +155,6 @@ Slideshow.prototype.loop = function(){
     (function loop(timestamp){
 
         if( ( timestamp - self.lasttime ) / 1000 > self.interval && self.ready ){
-
             self.lasttime = timestamp;
             self.slide( DIRECTION.NEXT );
         }

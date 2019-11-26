@@ -46,6 +46,14 @@ Slideshow.prototype.init = function(){
         self.slide(DIRECTION.PREV);
     };
 
+    images.onmouseover = function(event){
+        self.ready = false;
+    };
+
+    images.onmouseleave = function(event){
+        self.ready = true;
+    };
+
     ['load','resize'].forEach(function(e){
 
        window.addEventListener(e,function(){
@@ -146,7 +154,7 @@ Slideshow.prototype.loop = function(){
 
     (function loop(timestamp){
 
-        if( ( timestamp - self.lasttime ) / 1000 > self.interval ){
+        if( ( timestamp - self.lasttime ) / 1000 > self.interval && self.ready ){
 
             self.lasttime = timestamp;
             self.slide( DIRECTION.NEXT );

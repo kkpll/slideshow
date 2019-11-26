@@ -5,7 +5,7 @@ var DIRECTION = {
 };
 
 function Slideshow(id){
-    
+
     this.id       = id;
     this.lasttime = 0;
     this.interval = 3;
@@ -66,7 +66,7 @@ Slideshow.prototype.init = function(){
 
                if( e === 'load'){
                    console.log('window load');
-                   self.loop();
+                   if( self.length > 1 ) self.loop();
                }else if (e === 'resize'){
                    console.log('resize');
                }

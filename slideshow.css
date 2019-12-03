@@ -21,6 +21,11 @@
         flex:0 0 100%;
     }
 
+    .slideshow__images__image img{
+        width:100%;
+        height:auto;
+    }
+
     .slideshow__images--2 .slideshow__images__image{
         min-width:calc( 100%/2 );
         flex:0 0 calc( 100%/2 );
